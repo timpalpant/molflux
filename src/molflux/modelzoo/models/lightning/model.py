@@ -306,19 +306,14 @@ class LightningModelBase(ModelBase[LightningConfigT]):
         """Compiles the Lightning model."""
         compile_config = self.model_config.compile
         if isinstance(compile_config, CompileConfig):
-            raise ValueError(
-                "Compilation temporarily disabled. It will be re-enabled with PyTorch 2.1.\n"
-                "https://github.com/Lightning-AI/lightning/issues/17177#issuecomment-1481105838",
+            self.module = torch.compile(
+                self.module,
+                mode=compile_config.mode,
+                dynamic=compile_config.dynamic,
+                fullgraph=compile_config.fullgraph,
+                backend=compile_config.backend,
+                **compile_config.backend_kwargs,
             )
-            # TODO bring back with PyTorch 2.1
-            # self.module = torch.compile(
-            #     self.module,
-            #     mode=compile_config.mode,
-            #     dynamic=compile_config.dynamic,
-            #     fullgraph=compile_config.fullgraph,
-            #     backend=compile_config.backend,
-            #     **compile_config.backend_kwargs,
-            # )
 
     @property
     def config(self) -> dict[str, Any]:
