@@ -3,7 +3,7 @@ from copy import copy
 from typing import Any, Final, Literal
 
 import numpy as np
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 from scipy.stats import norm
 
 import datasets

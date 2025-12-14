@@ -2,14 +2,14 @@ from collections.abc import Iterable
 from typing import Any, Literal
 
 import yaml
-from pydantic.v1 import BaseModel, Field, ValidationError
+from pydantic import BaseModel, Field, ValidationError
 
 from molflux.datasets.typing import PathLike
 
 
 class Spec(BaseModel):
     name: str
-    config: dict[str, Any] = Field(default_factory=dict)
+    config: dict[str, Any] = {}
 
 
 class YamlConfig(BaseModel):

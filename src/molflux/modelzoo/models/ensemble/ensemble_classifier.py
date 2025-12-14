@@ -4,7 +4,7 @@ from dataclasses import asdict
 from typing import Any
 
 import numpy as np
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 from datasets import Dataset
 from molflux.modelzoo import load_from_store, save_to_store

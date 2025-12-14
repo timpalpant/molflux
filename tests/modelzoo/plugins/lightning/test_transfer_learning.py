@@ -1,6 +1,6 @@
 import pytest
 import torch
-from pydantic.v1 import ValidationError
+from pydantic import ValidationError
 from torch._dynamo.testing import CompileCounter
 
 from molflux.modelzoo import save_to_store

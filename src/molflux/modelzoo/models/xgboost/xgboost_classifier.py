@@ -2,7 +2,7 @@ from collections.abc import Callable
 
 import numpy as np
 from numpy.random import RandomState
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 from molflux.modelzoo.info import ModelInfo
 from molflux.modelzoo.model import ModelConfig

@@ -1,6 +1,6 @@
 from typing import Any
 
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 from scipy import stats
 
 import datasets

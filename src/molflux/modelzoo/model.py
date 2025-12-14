@@ -12,7 +12,7 @@ from dataclasses import field
 from functools import cached_property
 from typing import Any, Generic, TypeVar
 
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 from datasets import Dataset, concatenate_datasets
 from molflux.modelzoo.errors import NotTrainedError

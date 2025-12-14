@@ -1,6 +1,6 @@
 from typing import Literal
 
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 from molflux.modelzoo.info import ModelInfo
 from molflux.modelzoo.model import ModelConfig
@@ -140,7 +140,6 @@ MaxFeaturesCallable = Literal["sqrt", "log2"]
 class Config:
     extra = "forbid"
     arbitrary_types_allowed = True
-    smart_union = True
 
 
 @dataclasses.dataclass(config=Config)

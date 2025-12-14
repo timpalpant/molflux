@@ -2,7 +2,7 @@ import logging
 from dataclasses import asdict, field
 from typing import Any, Literal, TypeVar
 
-from pydantic.v1 import dataclasses, validator
+from pydantic import dataclasses, validator
 
 from molflux.modelzoo.model import ModelConfig
 
@@ -52,7 +52,6 @@ strategy_resolver = ClassResolver.from_subclasses(
 class ConfigDict:
     extra = "forbid"
     arbitrary_types_allowed = True
-    smart_union = True
 
 
 def _dict_is_single_logger_config(logger_dict: dict[str, Any]) -> bool:

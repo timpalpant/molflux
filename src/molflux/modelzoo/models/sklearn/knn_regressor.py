@@ -1,6 +1,6 @@
 from typing import Any, Literal
 
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 import datasets
 from molflux.modelzoo.info import ModelInfo

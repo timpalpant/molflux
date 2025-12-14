@@ -3,7 +3,7 @@ from typing import Any, Literal
 
 import numpy as np
 import scipy.stats as st
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 import datasets
 from molflux.modelzoo.info import ModelInfo

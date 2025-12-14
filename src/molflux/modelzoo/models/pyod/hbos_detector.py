@@ -1,7 +1,7 @@
 from dataclasses import asdict
 from typing import Any, Literal
 
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 from molflux.modelzoo.info import ModelInfo
 from molflux.modelzoo.models.pyod import (

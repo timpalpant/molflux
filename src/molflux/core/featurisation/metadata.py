@@ -5,7 +5,7 @@ import os
 from typing import Any
 
 from cloudpathlib import AnyPath
-from pydantic.v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 
 from molflux.core.environment import pip_working_set
 from molflux.core.io import save_dict_to_json
@@ -18,12 +18,9 @@ _FEATURISATION_METADATA_FILENAME = "featurisation_metadata.json"
 
 class RepresentationConfig(BaseModel):
     name: str
-    config: dict[str, Any] = Field(default_factory=dict)
-    presets: dict[str, Any] = Field(default_factory=dict)
-    as_: str | list[str | None] | None = Field(
-        default_factory=lambda: [None],
-        alias="as",
-    )
+    config: dict[str, Any] = {}
+    presets: dict[str, Any] = {}
+    as_: str | list[str | None] | None = [None]
 
 
 class ColumnFeaturisationConfig(BaseModel):
@@ -32,9 +29,9 @@ class ColumnFeaturisationConfig(BaseModel):
 
 
 class FeaturisationMetadataV1(BaseModel):
-    version: int = Field(1, const=True)
-    config: list[ColumnFeaturisationConfig] = Field(default_factory=list)
-    runtime: dict[str, Any] = Field(default_factory=pip_working_set)
+    version: int = 1
+    config: list[ColumnFeaturisationConfig] = []
+    runtime: dict[str, Any] = {}
 
 
 class ColumnFeaturisationConfigV2(BaseModel):
@@ -43,9 +40,9 @@ class ColumnFeaturisationConfigV2(BaseModel):
 
 
 class FeaturisationMetadataV2(BaseModel):
-    version: int = Field(2, const=True)
-    config: list[ColumnFeaturisationConfigV2] = Field(default_factory=list)
-    runtime: dict[str, Any] = Field(default_factory=pip_working_set)
+    version: int = 2
+    config: list[ColumnFeaturisationConfigV2] = []
+    runtime: dict[str, Any] = {}
 
 
 def _placeholder_featurisation_metadata() -> dict[str, Any]:

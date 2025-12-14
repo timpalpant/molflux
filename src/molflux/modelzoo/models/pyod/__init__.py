@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 import datasets
 

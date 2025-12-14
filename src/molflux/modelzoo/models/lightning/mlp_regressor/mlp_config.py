@@ -1,4 +1,4 @@
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 from molflux.modelzoo.models.lightning.config import ConfigDict, LightningConfig
 

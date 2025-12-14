@@ -2,7 +2,7 @@ import warnings
 
 import pandas as pd
 import pytest
-from pydantic.v1 import ValidationError
+from pydantic import ValidationError
 from sklearn.exceptions import DataConversionWarning
 
 import datasets

@@ -1,4 +1,4 @@
-from pydantic.v1 import Field, dataclasses, root_validator
+from pydantic import Field, dataclasses, root_validator
 
 from molflux.modelzoo.models.lightning.config import (
     ConfigDict,

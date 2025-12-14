@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 import datasets
 from molflux.modelzoo.info import ModelInfo

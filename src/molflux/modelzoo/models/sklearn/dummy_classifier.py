@@ -1,6 +1,6 @@
 from typing import Literal
 
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 from molflux.modelzoo.info import ModelInfo
 from molflux.modelzoo.model import ModelConfig
@@ -81,7 +81,6 @@ PredictionsStrategy = Literal[
 class Config:
     extra = "forbid"
     arbitrary_types_allowed = True
-    smart_union = True
 
 
 @dataclasses.dataclass(config=Config)

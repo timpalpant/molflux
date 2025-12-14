@@ -1,7 +1,7 @@
 from typing import Any, Literal, Optional, Union
 
 from numpy.random import RandomState
-from pydantic.v1 import dataclasses
+from pydantic import dataclasses
 
 import datasets
 from molflux.modelzoo.info import ModelInfo
