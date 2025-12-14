@@ -26,9 +26,8 @@ def fill_catalogue() -> None:
     """
     entrypoints = [
         entrypoint
-        for namespace, entrypoints in entry_points().items()
-        if namespace.startswith(NAMESPACE)
-        for entrypoint in entrypoints
+        for entrypoint in entry_points()
+        if entrypoint.group.startswith(NAMESPACE)
     ]
     for entrypoint in entrypoints:
         put_splitting_strategy_entrypoint(splitting_strategy_entrypoint=entrypoint)
